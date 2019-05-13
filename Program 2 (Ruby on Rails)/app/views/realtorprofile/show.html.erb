@@ -1,0 +1,11 @@
+<h1>Hi <%= @realtor.email %></h1>
+<br><br>
+
+<h2> Your Houses</h2>
+<% @realtor_houses.each do |house| %>
+   <%= link_to house.id,house_path(house) %>
+  <br>
+<% end %>
+<br><br><br><br>
+<h3><%= link_to "Add a new house", new_house_path %></h3>
+<h3><a href="http://18.224.197.227:8080/realtors/edit">Edit your profile</a></h3>

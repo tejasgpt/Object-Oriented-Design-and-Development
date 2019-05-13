@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hms</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <div>
+    <% if realtor_signed_in? %>
+      <li>
+        <%= link_to('Logout', destroy_realtor_session_path, method: :delete) %>
+      </li>
+    <% else %>
+<!--      <li>-->
+        <%#= link_to('Login', new_realtor_session_path)  %>
+<!--     </li>-->
+    <% end %>
+  </div>
+
+  <div>
+    <% if house_hunter_signed_in? %>
+      Hi! <strong><%=current_house_hunter.name %></strong>
+      <li>
+        <%= link_to('Logout', destroy_house_hunter_session_path, method: :delete) %>
+      </li>
+    <% else %>
+<!--      <li>-->
+        <%#= link_to('Login', new_house_hunter_session_path)  %>
+<!--      </li>-->
+    <% end %>
+  </div>
+  <%= yield %>
+  </body>
+</html>
