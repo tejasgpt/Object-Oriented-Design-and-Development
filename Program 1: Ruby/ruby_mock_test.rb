@@ -92,7 +92,7 @@ def scores
     wrong+=1
   end
 
-  # puts correct+wrong
+  #puts correct+wrong
   puts correct, wrong, correct+wrong
   return ( (correct).to_f / (wrong + correct) ).round(2) * 100
 end
