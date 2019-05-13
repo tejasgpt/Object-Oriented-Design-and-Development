@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recompanies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Website</th>
+      <th>Address</th>
+      <th>Size</th>
+      <th>Founded</th>
+      <th>Revenue</th>
+      <th>Synopsis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recompanies.each do |recompany| %>
+      <tr>
+        <td><%= recompany.name %></td>
+        <td><%= recompany.website %></td>
+        <td><%= recompany.address %></td>
+        <td><%= recompany.size %></td>
+        <td><%= recompany.founded %></td>
+        <td><%= recompany.revenue %></td>
+        <td><%= recompany.synopsis %></td>
+        <td><%= link_to 'Show', recompany %></td>
+        <td><%= link_to 'Edit', edit_recompany_path(recompany) %></td>
+        <td><%= link_to 'Destroy', recompany, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recompany', new_recompany_path %>

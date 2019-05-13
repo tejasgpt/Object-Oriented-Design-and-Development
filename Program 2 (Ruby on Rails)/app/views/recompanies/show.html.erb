@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @recompany.name %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @recompany.website %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @recompany.address %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @recompany.size %>
+</p>
+
+<p>
+  <strong>Founded:</strong>
+  <%= @recompany.founded %>
+</p>
+
+<p>
+  <strong>Revenue:</strong>
+  <%= @recompany.revenue %>
+</p>
+
+<p>
+  <strong>Synopsis:</strong>
+  <%= @recompany.synopsis %>
+</p>
+
+<%= link_to 'Edit', edit_recompany_path(@recompany) %> |
+<%= link_to 'Back', recompanies_path %>

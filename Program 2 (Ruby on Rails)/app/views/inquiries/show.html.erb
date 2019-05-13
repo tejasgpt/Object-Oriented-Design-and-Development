@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @inquiry.subject %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @inquiry.message %>
+</p>
+<%= link_to 'Back', inquiries_path %>
+
+<%= link_to 'Edit', edit_inquiry_path(@inquiry) %>
+<%= link_to 'Destroy', @inquiry, method: :delete, data: { confirm: 'Are you sure?' } %>
+

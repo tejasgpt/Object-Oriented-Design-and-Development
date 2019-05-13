@@ -1,0 +1,52 @@
+<%= form_with(model: recompany, local: true) do |form| %>
+  <% if recompany.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recompany.errors.count, "error") %> prohibited this recompany from being saved:</h2>
+
+      <ul>
+      <% recompany.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website %>
+    <%= form.text_field :website %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.number_field :size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :founded %>
+    <%= form.date_select :founded %>
+  </div>
+
+  <div class="field">
+    <%= form.label :revenue %>
+    <%= form.number_field :revenue %>
+  </div>
+
+  <div class="field">
+    <%= form.label :synopsis %>
+    <%= form.text_area :synopsis %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

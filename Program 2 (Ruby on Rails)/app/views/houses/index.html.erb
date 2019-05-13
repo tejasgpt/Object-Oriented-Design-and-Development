@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<!--<p><strong>Refine your house hunt</strong></p>
+
+<#%= form_with model: @houses, url:house_url do |f| %>
+  <p><b>Price Range</b></p>
+   $1500<#%= f.range_field(:price, nil , in: 1500..10000) %>$10,000
+
+  <p><b>Area</b></p>
+    750 sqft<#%= f.range_field(:sqf, nil , in: 750..5000) %>5000 sqft
+
+  <p><b>Location</b></p>
+  <select name="location">
+    <#% @houses.each do |house| %>
+      <option value=house.location><#%=house.location %></option>
+    <#%end %>
+  </select>
+  <br><br>
+  <#%= f.submit "Refine your results" %>
+<#%end %> -->
+
+<h1>Houses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Companyid</th>
+      <th>Location</th>
+      <th>Sqf</th>
+      <th>Year</th>
+      <th>Style</th>
+      <th>Price</th>
+      <th>Floors</th>
+      <th>Basement</th>
+      <th>Owner</th>
+      <th>Contact</th>
+      <th>Potentialbuyers</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @houses.each do |house| %>
+      <tr>
+        <td><%= house.companyid %></td>
+        <td><%= house.location %></td>
+        <td><%= house.sqf %></td>
+        <td><%= house.year %></td>
+        <td><%= house.style %></td>
+        <td><%= house.price %></td>
+        <td><%= house.floors %></td>
+        <td><%= house.basement %></td>
+        <td><%= house.owner %></td>
+        <td><%= house.contact %></td>
+        <td><%= house.potentialbuyers %></td>
+        <td><%= link_to 'Show', house %></td>
+        <td><%= link_to 'Edit', edit_house_path(house) %></td>
+        <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Add Inquiry', new_inquiry_path %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New House', new_house_path %>
