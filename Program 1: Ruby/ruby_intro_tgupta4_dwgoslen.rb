@@ -49,6 +49,7 @@ def highest_frequency_word(s)
 end
 
 # Part 3
+
 class Book
   attr_accessor :name, :price
 
